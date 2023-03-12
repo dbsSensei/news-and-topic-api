@@ -39,6 +39,13 @@ const server = Fastify({
 
 // Register your application as a normal plugin.
 server.register(fastifyEnv, options);
+console.log("test",process.env.DB_NAME,
+    process.env.DB_USERNAME,
+    process.env.DB_PASSWORD,
+    {
+      host: process.env.DB_HOST,
+      dialect: 'postgres',
+    })
 server.register(app);
 
 // Start listening.
